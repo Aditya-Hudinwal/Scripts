@@ -1,0 +1,32 @@
+1. pstree: the pstree command displays the current processes on the system in a tree-like structure.
+
+2. killall: the killall command sends a kill signal to all processes identified by name.
+
+3. fuser: the fuser command identifies the PID of processes that use the specified files or file systems.
+
+4. watch: The watch command regularly executes a command and displays the result in the terminal in full screen.
+          -n option allows you to specify the number of seconds between each execution of the command.
+   Ex- watch -n 5 tail -n 3 /etc/passwd
+
+5. install: This command combines file copying (cp) and directory creation (mkdir), with rights management (chmod, chown) and other useful functionalities (like backups).
+
+Options	Remarks                          
+-b or --backup[=suffix]	create a backup of destination file.
+-d    	treat arguments as directory names.              
+-D    	create all leading components before copying SOURCE to DEST.
+-g and -o    	set ownership.              
+-m    	set permissions.              
+-p    	preserve the timestamps of sources files.              
+-t	copy all source arguments to directory.
+
+Examples:
+Create a directory with the -d option: install -d ~/samples
+Copy a file from a source location to a directory: install src/sample.txt ~/samples/ 
+
+These two orders could have been carried out with a single command:
+ install -v -D -t ~/samples/ src/sample.txt 
+install: creating directory '~/samples'
+'src/sample.txt' -> '~/samples/sample.txt'
+
+we  can also create a backup of existing files  to the -b option:  install -v -b -D -t ~/samples/ src/sample.txt
+
